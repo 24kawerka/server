@@ -15,7 +15,7 @@ const io = require('socket.io')(server, {
 });
 const PORT = process.env.PORT || 5000
 app.use(cors({
-    origin: "*",
+    origin: "https://24kawerka.github.io",
     methods: ["GET", "POST"]
 }
 ))
