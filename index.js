@@ -16,7 +16,7 @@ const io = require('socket.io')(server, {
 const PORT = process.env.PORT || 5000
 app.use(cors({
     origin: "*",
-    methods: ["GET,HEAD,PUT,PATCH,POST,DELETE"]
+    methods: ["GET", "POST"]
 }
 ))
 app.use(express.json())
