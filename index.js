@@ -16,6 +16,9 @@ const io = require('socket.io')(server, {
 const PORT = process.env.PORT || 5000
 app.use(cors())
 app.use(express.json())
+app.get('/', (req, res) => {
+    return res.json({ message: 'ok' })
+})
 app.use('/api', router)
 //lastMiddleware
 app.use(errorHandler)
