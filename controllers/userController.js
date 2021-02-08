@@ -32,10 +32,11 @@ class UserController {
 
     async login(req, res, next) {
         const { email, password } = req.body
+        console.log(req.body);
         const user = await User.findOne({ where: { email } })
-        if (user.isOnline === false) {
-            return next(ApiError.internal('Пользователь неактивен, создайте новый аккаунт!'))
-        }
+        // if (user.isOnline === false) {
+        //     return next(ApiError.internal('Пользователь неактивен, создайте новый аккаунт!'))
+        // }
         if (!user) {
             return next(ApiError.internal('Пользователь не найден!'))
         }
