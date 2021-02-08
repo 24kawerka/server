@@ -20,6 +20,7 @@ app.use(cors({
     methods: ["GET", "POST"]
 }
 ))
+app.use(express.static('build'));
 app.use(express.json())
 app.get('/', (req, res) => {
     return res.sendFile(path.join(__dirname, '/build/index.html'))
