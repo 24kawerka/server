@@ -7,6 +7,7 @@ const errorHandler = require('./middleware/ErrorHandlingMiddleware')
 const express = require('express')
 const app = express()
 const server = require('http').createServer(app);
+const path = require('path')
 const io = require('socket.io')(server, {
     cors: {
         origin: "https://24kawerka.github.io",
@@ -21,7 +22,7 @@ app.use(cors({
 ))
 app.use(express.json())
 app.get('/', (req, res) => {
-    return res.sendFile(path.join(__dirname, 'build/index.html'))
+    return res.sendFile(path.join(__dirname, '/build/index.html'))
 })
 app.use('/api', router)
 //lastMiddleware
