@@ -10,13 +10,13 @@ const server = require('http').createServer(app);
 const path = require('path')
 const io = require('socket.io')(server, {
     cors: {
-        origin: "https://24kawerka.github.io",
+        origin: "*",
         methods: ["GET", "POST"]
     }
 });
 const PORT = process.env.PORT || 5000
 app.use(cors({
-    origin: "https://24kawerka.github.io",
+    origin: "*",
     methods: ["GET", "POST"]
 }
 ))
