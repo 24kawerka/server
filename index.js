@@ -21,7 +21,7 @@ app.use(cors({
 ))
 app.use(express.json())
 app.get('/', (req, res) => {
-    return res.sendFile(path.join(__dirname, '/build/index.html'))
+    return res.sendFile(path.join(__dirname, 'build/index.html'))
 })
 app.use('/api', router)
 //lastMiddleware
